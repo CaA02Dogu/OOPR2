@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPainter>
+#include <QDir>
 #include <memory>
 
 
@@ -40,7 +41,7 @@ void MainWindow::paintEvent(QPaintEvent *event){
 
     QPainter painter(this);
     QPen pen;
-    QImage image("/home/gaos/Documents/NSE/Semester4/OOPR2/gebouw/Gebouw.png");
+    QImage image("/home/gaos/Documents/NSE/Semester4/OOPR2/gebouw-les4/Gebouw.png");
 
     pen.setColor(Qt::green);
     pen.setWidth(4);

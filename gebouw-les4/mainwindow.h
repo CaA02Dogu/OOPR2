@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QTextBrowser>
 #include <QString>
+#include <QImage>
 #include <memory>
 #include <vector>
 #include "sensor.h"

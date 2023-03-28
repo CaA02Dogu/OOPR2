@@ -25,6 +25,7 @@ void HerkenningsSlot::ontgrendel(string naam)
 }
 
 void HerkenningsSlot::toonKaartenbak(){
+    afdrukker->clearMedium();
     for(auto it = kaartenbak.begin(); it != kaartenbak.end(); ++it)
         afdrukker->toonText(it->first);
 }
