@@ -1,5 +1,7 @@
 #include "kaartslot.h"
 
+std::map<std::string, shared_ptr<IdKaart>> KaartSlot::idKaarten{};
+
 KaartSlot::KaartSlot(string p): closed(true), plaats(p)
 {
 
@@ -24,7 +26,7 @@ void KaartSlot::ontgrendel(string eenSleutel){
             closed = false;
 }
 
-void KaartSlot::voegIdKaartToe(IdKaart* k){
+void KaartSlot::voegIdKaartToe(shared_ptr<IdKaart> k){
     idKaarten[k->userId()] = k;
 }
 
@@ -34,10 +36,16 @@ void KaartSlot::verwijderIdKaart(string eenID){
         idKaarten.erase(iterator);
 }
 
-IdKaart* KaartSlot::returnId(string eenID){
+shared_ptr<IdKaart> KaartSlot::returnId(string eenID){
     auto iterator = idKaarten.find(eenID);
-    if(iterator != idKaarten.end())
-        return iterator->second;
+    if(iterator != idKaarten.end()) {
+        shared_ptr<IdKaart> idk = iterator->second;
+        return idk;
+    }
     else
         return nullptr;
 }
+
+//static map<string, IdKaart*> KaartSlot::returnMap(){
+//    return idKaarten;
+//}

@@ -43,7 +43,7 @@ void MainWindow::paintEvent(QPaintEvent *event){
 
     QPainter painter(this);
     QPen pen;
-    QImage image("/home/gaos/Documents/NSE/Semester4/OOPR2/gebouw-les4/Gebouw.png");
+    QImage image("//wsl.localhost/Debian/home/user/Projects/OOPR2/OOPR2/Gebouw.png");
 
     pen.setColor(Qt::green);
     pen.setWidth(4);
@@ -150,9 +150,9 @@ void MainWindow::on_ID_clicked(){
     ui->lineEditName->setText("");
     ui->lineEditAddress->setText("");
 
-    IdKaart nieuweId(id, name, address);
+    idkaarten.push_back(make_shared<IdKaart>(id, name, address));
     KaartSlot *kaart = dynamic_cast<KaartSlot*>(lock.at(5).get());
-    kaart->voegIdKaartToe(&nieuweId);
+    kaart->voegIdKaartToe(idkaarten.at(idkaarten.size() - 1));
 
     update();
 }
@@ -170,16 +170,23 @@ void MainWindow::on_ID_remove_clicked(){
 
 void MainWindow::on_ID_Register_clicked(){
     KaartSlot *kaart = dynamic_cast<KaartSlot*>(lock.at(5).get());
-    IdKaart* id = kaart->returnId(ui->lineEditRegister->text().toStdString());
+    if(kaart == nullptr)
+           return;
+    shared_ptr<IdKaart> id = kaart->returnId(ui->lineEditRegister->text().toStdString());
     if(id != nullptr)
         id->geefToegang(kaart);
+
+    ui->lineEditRegister->setText("");
     update();
 }
 
 void MainWindow::on_ID_RemoveSlot_clicked(){
     KaartSlot *kaart = dynamic_cast<KaartSlot*>(lock.at(5).get());
-    IdKaart* id = kaart->returnId(ui->lineEditRegister->text().toStdString());
-    id->verwijderToegang(kaart);
+    shared_ptr<IdKaart> id = kaart->returnId(ui->lineEditRegister->text().toStdString());
+    if(id != nullptr)
+        id->verwijderToegang(kaart);
 
+    ui->lineEditRegister->setText("");
     update();
 }
+

@@ -36,6 +36,7 @@ SOURCES += main.cpp\
     codeslot.cpp \
     herkenningsslot.cpp \
     drukbox.cpp \
+    slotexception.cpp
 
 HEADERS  += mainwindow.h \
     deur.h \
@@ -51,5 +52,6 @@ HEADERS  += mainwindow.h \
     herkenningsslot.h \
     afdrukker.h \
     drukbox.h \
+    slotexception.h
 
 FORMS    += mainwindow.ui

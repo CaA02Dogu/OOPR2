@@ -16,8 +16,10 @@ void IdKaart::geefToegang(KaartSlot* eenKaartSlot){
 
 void IdKaart::verwijderToegang(KaartSlot* eenKaartSlot){
     for(auto iterator = toegang.begin(); iterator != toegang.end(); ++iterator)
-        if(*iterator == eenKaartSlot)
+        if(*iterator == eenKaartSlot){
             toegang.erase(iterator);
+            break;
+        }
 }
 
 bool IdKaart::heeftToegangTot(KaartSlot* eenKaartSlot){

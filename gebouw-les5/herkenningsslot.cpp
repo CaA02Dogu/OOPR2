@@ -20,7 +20,8 @@ bool HerkenningsSlot::isVergrendeld()
 
 void HerkenningsSlot::ontgrendel(string naam)
 {
-    if(kaartenbak[naam])
+    auto iterator = kaartenbak.find(naam);
+    if(iterator != kaartenbak.end())
         closed = false;
 }
 

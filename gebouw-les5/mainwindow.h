@@ -53,6 +53,7 @@ private:
     shared_ptr<Afdrukker> af;
     vector<shared_ptr<Deur>> door;
     vector<shared_ptr<Slot>> lock;
+    vector<shared_ptr<IdKaart>> idkaarten;
 };
 
 #endif // MAINWINDOW_H
