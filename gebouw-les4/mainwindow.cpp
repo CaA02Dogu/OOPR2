@@ -41,7 +41,7 @@ void MainWindow::paintEvent(QPaintEvent *event){
 
     QPainter painter(this);
     QPen pen;
-    QImage image("/home/gaos/Documents/NSE/Semester4/OOPR2/gebouw-les4/Gebouw.png");
+    QImage image("../Gebouw.png");
 
     pen.setColor(Qt::green);
     pen.setWidth(4);

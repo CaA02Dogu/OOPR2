@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.4.2
+** Created by: Qt User Interface Compiler version 6.4.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -43,6 +43,14 @@ public:
     QPushButton *AP;
     QPushButton *AN;
     QPushButton *ToonKaart;
+    QLineEdit *lineEditID;
+    QLineEdit *lineEditAddress;
+    QLineEdit *lineEditName;
+    QPushButton *ID;
+    QPushButton *ID_remove;
+    QPushButton *ID_Register;
+    QPushButton *ID_RemoveSlot;
+    QLineEdit *lineEditRegister;
     QMenuBar *menuBar;
     QMenu *menuGebouw;
     QToolBar *mainToolBar;
@@ -52,7 +60,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1104, 509);
+        MainWindow->resize(1372, 498);
         actionGebouw = new QAction(MainWindow);
         actionGebouw->setObjectName("actionGebouw");
         actionSlot = new QAction(MainWindow);
@@ -83,21 +91,23 @@ public:
         deur_2->setGeometry(QRect(320, 210, 31, 31));
         kaartenbak = new QTextBrowser(centralWidget);
         kaartenbak->setObjectName("kaartenbak");
-        kaartenbak->setGeometry(QRect(870, 20, 171, 91));
+        kaartenbak->setGeometry(QRect(870, 20, 171, 131));
         QPalette palette;
-        QBrush brush(QColor(68, 68, 68, 255));
+        QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
         QBrush brush1(QColor(40, 40, 40, 255));
         brush1.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Inactive, QPalette::Base, brush1);
         palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
         kaartenbak->setPalette(palette);
         lineEditS = new QLineEdit(centralWidget);
         lineEditS->setObjectName("lineEditS");
         lineEditS->setGeometry(QRect(910, 280, 113, 34));
         QPalette palette1;
-        palette1.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush2(QColor(68, 68, 68, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::Base, brush2);
         palette1.setBrush(QPalette::Inactive, QPalette::Base, brush1);
         palette1.setBrush(QPalette::Disabled, QPalette::Base, brush1);
         lineEditS->setPalette(palette1);
@@ -105,7 +115,7 @@ public:
         lineEditD1->setObjectName("lineEditD1");
         lineEditD1->setGeometry(QRect(910, 320, 113, 34));
         QPalette palette2;
-        palette2.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette2.setBrush(QPalette::Active, QPalette::Base, brush2);
         palette2.setBrush(QPalette::Inactive, QPalette::Base, brush1);
         palette2.setBrush(QPalette::Disabled, QPalette::Base, brush1);
         lineEditD1->setPalette(palette2);
@@ -113,7 +123,7 @@ public:
         lineEditD2->setObjectName("lineEditD2");
         lineEditD2->setGeometry(QRect(910, 360, 113, 34));
         QPalette palette3;
-        palette3.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette3.setBrush(QPalette::Active, QPalette::Base, brush2);
         palette3.setBrush(QPalette::Inactive, QPalette::Base, brush1);
         palette3.setBrush(QPalette::Disabled, QPalette::Base, brush1);
         lineEditD2->setPalette(palette3);
@@ -122,7 +132,7 @@ public:
         lineEditA->setGeometry(QRect(910, 180, 113, 34));
         QPalette palette4;
         palette4.setBrush(QPalette::Active, QPalette::Base, brush);
-        palette4.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette4.setBrush(QPalette::Inactive, QPalette::Base, brush);
         palette4.setBrush(QPalette::Disabled, QPalette::Base, brush1);
         lineEditA->setPalette(palette4);
         AP = new QPushButton(centralWidget);
@@ -134,10 +144,54 @@ public:
         ToonKaart = new QPushButton(centralWidget);
         ToonKaart->setObjectName("ToonKaart");
         ToonKaart->setGeometry(QRect(720, 50, 118, 34));
+        lineEditID = new QLineEdit(centralWidget);
+        lineEditID->setObjectName("lineEditID");
+        lineEditID->setGeometry(QRect(1210, 280, 113, 34));
+        QPalette palette5;
+        palette5.setBrush(QPalette::Active, QPalette::Base, brush2);
+        palette5.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette5.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        lineEditID->setPalette(palette5);
+        lineEditAddress = new QLineEdit(centralWidget);
+        lineEditAddress->setObjectName("lineEditAddress");
+        lineEditAddress->setGeometry(QRect(1210, 360, 113, 34));
+        QPalette palette6;
+        palette6.setBrush(QPalette::Active, QPalette::Base, brush2);
+        palette6.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette6.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        lineEditAddress->setPalette(palette6);
+        lineEditName = new QLineEdit(centralWidget);
+        lineEditName->setObjectName("lineEditName");
+        lineEditName->setGeometry(QRect(1210, 320, 113, 34));
+        QPalette palette7;
+        palette7.setBrush(QPalette::Active, QPalette::Base, brush2);
+        palette7.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette7.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        lineEditName->setPalette(palette7);
+        ID = new QPushButton(centralWidget);
+        ID->setObjectName("ID");
+        ID->setGeometry(QRect(1210, 200, 111, 31));
+        ID_remove = new QPushButton(centralWidget);
+        ID_remove->setObjectName("ID_remove");
+        ID_remove->setGeometry(QRect(1210, 240, 111, 31));
+        ID_Register = new QPushButton(centralWidget);
+        ID_Register->setObjectName("ID_Register");
+        ID_Register->setGeometry(QRect(550, 230, 111, 31));
+        ID_RemoveSlot = new QPushButton(centralWidget);
+        ID_RemoveSlot->setObjectName("ID_RemoveSlot");
+        ID_RemoveSlot->setGeometry(QRect(550, 270, 111, 31));
+        lineEditRegister = new QLineEdit(centralWidget);
+        lineEditRegister->setObjectName("lineEditRegister");
+        lineEditRegister->setGeometry(QRect(550, 310, 113, 34));
+        QPalette palette8;
+        palette8.setBrush(QPalette::Active, QPalette::Base, brush2);
+        palette8.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette8.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        lineEditRegister->setPalette(palette8);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 1104, 28));
+        menuBar->setGeometry(QRect(0, 0, 1372, 25));
         menuGebouw = new QMenu(menuBar);
         menuGebouw->setObjectName("menuGebouw");
         MainWindow->setMenuBar(menuBar);
@@ -171,6 +225,10 @@ public:
         AP->setText(QCoreApplication::translate("MainWindow", "A+", nullptr));
         AN->setText(QCoreApplication::translate("MainWindow", "A-", nullptr));
         ToonKaart->setText(QCoreApplication::translate("MainWindow", "Toon Kaart", nullptr));
+        ID->setText(QCoreApplication::translate("MainWindow", "Create ID", nullptr));
+        ID_remove->setText(QCoreApplication::translate("MainWindow", "Delete ID", nullptr));
+        ID_Register->setText(QCoreApplication::translate("MainWindow", "Register ID", nullptr));
+        ID_RemoveSlot->setText(QCoreApplication::translate("MainWindow", "Remove ID", nullptr));
         menuGebouw->setTitle(QCoreApplication::translate("MainWindow", "Gebouw", nullptr));
     } // retranslateUi
 
